@@ -1,0 +1,99 @@
+<div class="main-signin">
+    <div class="sub-section">
+        <div class="left-sec" fxFlex="50" fxFlex.lt-sm="100" fxFlex.lt-md="60" fxLayoutAlign="center center">
+            <div class="signin-form" fxFlex="50" fxFlex.lt-md="80" fxLayout="column" fxLayoutAlign="space-evenly">
+                <div class="heading-portion">
+                    <div class="heading">
+                        <h1>Welcome!</h1>
+                        <h3>Please Enter Following Inputs</h3>
+                    </div>
+                </div>
+                <div class="form-portion" fxLayout="column" fxLayoutGap="20px">
+                    <!-- <nz-spin nzTip="Loading..." [nzSpinning]="lazyItemLoad"> -->
+                    <form nz-form [formGroup]="validationForm" (ngSubmit)="onSubmitForm(validationForm)">
+                        <div class="email-sec">
+                            <div class="title">
+                                <h5>Input Something</h5>
+                            </div>
+                            <div class="email-input">
+                                <nz-form-item>
+                                    <nz-form-control [nzErrorTip]="emailErrorTem">
+                                        <input placeholder="Input Something" formControlName="reactiveInput" nz-input
+                                            nzSize="large" />
+                                    </nz-form-control>
+                                    <ng-template #emailErrorTem let-control>
+                                        <ng-container *ngIf="control.hasError('required')">Input is required
+                                        </ng-container>
+                                        <ng-container *ngIf="control.hasError('pattern')">Please enter valid email
+                                        </ng-container>
+                                    </ng-template>
+                                </nz-form-item>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row">
+                            <button fxFlexFill nz-button nzType="primary">Submit</button>
+                        </div>
+
+                    </form>
+                    <form nz-form [formGroup]="validationForm" (ngSubmit)="LoadUrlData(validationForm)">
+                        <div class="password-sec">
+                            <div class="title">
+                                <h5>Input URL</h5>
+                            </div>
+                            <div class="password-input" fxLayout="row" fxLayoutAlign="space-between center">
+                                <nz-form-item fxFlex="80">
+                                    <nz-form-control [nzErrorTip]="urlErrorTem">
+                                        <input placeholder="Input Two" formControlName="urlInput" nz-input 
+                                            nzSize="large" />
+                                    </nz-form-control>
+                                    <ng-template #urlErrorTem let-control>
+                                        <ng-container *ngIf="control.hasError('required')">URL is required
+                                        </ng-container>
+                                        <ng-container *ngIf="control.hasError('pattern')">Please enter valid URL
+                                        </ng-container>
+                                    </ng-template>
+                                </nz-form-item>
+                                <button nz-button nzType="primary">Load</button>
+                            </div>
+                        </div>
+                        <!-- <div fxLayout="row">
+                            <button fxFlexFill nz-button nzType="primary">Submit</button>
+                        </div> -->
+
+                    </form>
+                    <!-- </nz-spin> -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="right-sec" fxFlex="80" fxFlex.lt-md="40" fxFlexfill fxHide.lt-sm fxLayoutAlign="center center"> -->
+   <div  class="right-sec" fxFlex="50" fxFlex.lt-sm="100" fxFlex.lt-md="60" fxLayoutAlign="center center">        
+            <div class="logo">
+                <h1 class="margin">Description</h1>
+                <p>{{desc}}</p>
+                <h2>Total Words: {{descCount}}</h2>
+                <nz-table #basicTable [nzData]="listOfData" nzTableLayout="fixed">
+                    <thead>
+                        <tr>
+                            <th>Words</th>
+                            <th>Word Count</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data">
+                            <td>{{data.word}}</td>
+                            <td>{{data.count}}</td>
+
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+
+     
+
+        </div>
+    </div>
+</div>

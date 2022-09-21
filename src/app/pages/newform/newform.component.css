@@ -1,0 +1,63 @@
+.main-signin {
+  height: 100vh;
+  width: 100%;
+  background: #d2e8c7;
+}
+.warning {
+  color: red;
+}
+
+.sub-section {
+  display: flex;
+  height: 100vh;
+}
+.left-sec {
+  flex: 0 0 50%;
+  background: #d2e8c7;
+}
+.form-portion input {
+  height: 40px !important;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.form-portion button {
+  height: 40px !important;
+  color: #25371b;
+  background: #97df72;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+.form-portion input:last-child {
+  margin-bottom: 5px !important;
+}
+.right-sec {
+  flex: 0 0 50%;
+  background: #f3f9f0;
+}
+.logo {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+}
+::ng-deep nz-form-item.ant-form-item{
+    margin: 0 !important;
+}
+::ng-deep .ant-form-item-explain-error{
+    color: red !important;
+}
+
+.margin
+{
+  margin-top: 200px !important;
+}
